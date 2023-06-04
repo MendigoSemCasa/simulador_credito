@@ -14,10 +14,10 @@ struct ContentView: View {
     @State var translation: CGSize = CGSize(width: 0, height: 0)
     @State var location: CGPoint = CGPoint(x: 0, y: 0)
 // Preciso armazenar as informacoes que o usuario vai inserir em valor desejado e prazo
-    @State var valorDesejado = ""
-    @State var prazo = ""
+    @State var valorDesejado = "1000"
+    @State var prazo = "14"
     
-    @State var numero = ""
+    @State var numero = "14"
     @State var valorJuros = ""
     @State var valorPrestacao = ""
     
@@ -62,7 +62,17 @@ var body: some View {
             TextField("digite", text: $valorDesejado)
                 .font(.custom("futura", size: 20))
                 .foregroundColor(Color("grafite"))
-            
+                .onChange(of: valorDesejado, perform: { newValue in
+                    calcularParcela(valor: Double(valorDesejado) ?? 0.0, prazo: Int(prazo) ?? 0) { resultado in
+                   
+                        DispatchQueue.main.async {
+                            self.valorPrestacao = String(resultado.valorPrestacao)
+
+                        }
+                        
+                        
+                    }
+                })
                 .padding(.vertical, 5)
             
                 .overlay(
@@ -89,6 +99,17 @@ var body: some View {
             TextField("digite", text: $prazo)
                 .font(.custom("futura", size: 20))
                 .foregroundColor(Color("grafite"))
+                .onChange(of: prazo, perform: { newValue in
+                    calcularParcela(valor: Double(valorDesejado) ?? 0.0, prazo: Int(prazo) ?? 0) { resultado in
+                   
+                        DispatchQueue.main.async {
+                            self.valorPrestacao = String(resultado.valorPrestacao)
+
+                        }
+                        
+                        
+                    }
+                })
                 .padding(.vertical, 5)
                 .overlay(
                     RoundedRectangle(cornerRadius: 14)
@@ -121,7 +142,7 @@ var body: some View {
 //Configuração do Drawer
             
             GeometryReader { reader in
-                BottomSheet(valorDesejado: valorDesejado)
+                BottomSheet(valorDesejado: $valorDesejado, valorPrestacao :  $valorPrestacao)
                     .offset(y: reader.frame (in: .global) .height - 100)
                     .offset(y: offset)
                     .gesture(DragGesture() .onChanged({ (value) in withAnimation {
@@ -175,7 +196,8 @@ var body: some View {
 // View Snapping Drawer
 
 struct BottomSheet: View {
-    var valorDesejado: String
+    @Binding var valorDesejado: String
+    @Binding var valorPrestacao: String
     
 
  var body: some View {
@@ -218,7 +240,7 @@ struct BottomSheet: View {
                             .foregroundColor(Color("tangerina"))
 
                         
-                        Text ("200")
+                        Text (valorPrestacao)
                             .padding(.trailing)
                             .font(.custom("futura", size: 24).bold())
                             .foregroundColor(/*@START_MENU_TOKEN@*/.white/*@END_MENU_TOKEN@*/)

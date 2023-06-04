@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19C0B2512A2CF7FA00142A3B /* ParcelaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C0B2502A2CF7FA00142A3B /* ParcelaModel.swift */; };
+		19FE95792A2CBD0E0002482D /* calculoEmprestimoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FE95782A2CBD0E0002482D /* calculoEmprestimoViewModel.swift */; };
 		C5E2CD2E2A2CB2530032EE37 /* simulador_creditoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E2CD2D2A2CB2530032EE37 /* simulador_creditoApp.swift */; };
 		C5E2CD302A2CB2530032EE37 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E2CD2F2A2CB2530032EE37 /* ContentView.swift */; };
 		C5E2CD322A2CB2540032EE37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5E2CD312A2CB2540032EE37 /* Assets.xcassets */; };
@@ -14,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		19C0B2502A2CF7FA00142A3B /* ParcelaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParcelaModel.swift; sourceTree = "<group>"; };
+		19FE95782A2CBD0E0002482D /* calculoEmprestimoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calculoEmprestimoViewModel.swift; sourceTree = "<group>"; };
 		C5E2CD2A2A2CB2530032EE37 /* simulador_credito.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = simulador_credito.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5E2CD2D2A2CB2530032EE37 /* simulador_creditoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = simulador_creditoApp.swift; sourceTree = "<group>"; };
 		C5E2CD2F2A2CB2530032EE37 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -52,7 +56,9 @@
 			isa = PBXGroup;
 			children = (
 				C5E2CD2D2A2CB2530032EE37 /* simulador_creditoApp.swift */,
+				19FE95782A2CBD0E0002482D /* calculoEmprestimoViewModel.swift */,
 				C5E2CD2F2A2CB2530032EE37 /* ContentView.swift */,
+				19C0B2502A2CF7FA00142A3B /* ParcelaModel.swift */,
 				C5E2CD312A2CB2540032EE37 /* Assets.xcassets */,
 				C5E2CD332A2CB2540032EE37 /* Preview Content */,
 			);
@@ -138,6 +144,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5E2CD302A2CB2530032EE37 /* ContentView.swift in Sources */,
+				19FE95792A2CBD0E0002482D /* calculoEmprestimoViewModel.swift in Sources */,
+				19C0B2512A2CF7FA00142A3B /* ParcelaModel.swift in Sources */,
 				C5E2CD2E2A2CB2530032EE37 /* simulador_creditoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
